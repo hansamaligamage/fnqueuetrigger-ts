@@ -38,7 +38,8 @@ AddPerson(myQueueItem, context);
     const database = AppConfiguration.Setting().database;
     const collection = AppConfiguration.Setting().collection;
 
-    const authenticator = new Gremlin.driver.auth.PlainTextSaslAuthenticator(`/dbs/${database}/colls/${collection}`, key)
+    const authenticator = new Gremlin.driver.auth.PlainTextSaslAuthenticator(
+      `/dbs/${database}/colls/${collection}`, key)
 
     const client = new Gremlin.driver.Client(
         endpoint, 
